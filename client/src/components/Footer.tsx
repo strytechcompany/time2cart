@@ -76,9 +76,9 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Customer Service</h4>
               <div className="space-y-2">
-                <p className="text-gray-400">Email: info@mirajcandles.com</p>
-                <p className="text-gray-400">Phone: +91 8015324928</p>
-                <p className="text-gray-400">WhatsApp: +91 8015324928</p>
+                <p className="text-gray-400">Email: admin@time2cart.com</p>
+                <p className="text-gray-400">Phone: +91 80153 24928</p>
+                <p className="text-gray-400">WhatsApp: +91 80153 24928</p>
                 <p className="text-gray-400 text-sm">
                   Mon-Sat: 9:30 AM - 6:00 PM<br />
                   Sunday: 9:30 AM - 1:30 PM
