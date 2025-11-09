@@ -15,6 +15,7 @@ import { useWishlist } from '../context/WishlistContext';
 import { useAuth } from '../context/AuthContext';
 import { Product } from '../types';
 import toast from 'react-hot-toast';
+import Logo from '../components/Logo1.jpg';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +49,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const filterProduct = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/products/search?q=${encodeURIComponent(searchQuery)}`, { withCredentials: true } );
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/products/search?q=${encodeURIComponent(searchQuery)}`, { withCredentials: true });
         setSearchResults(response.data);
         setShowSearchDropdown(response.data.length > 0);
       }
@@ -130,17 +131,11 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                </svg>
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-                  T2C
-                </h1>
-                <p className="text-xs text-gray-500 -mt-1">Candles</p>
-              </div>
+              <img
+                src={Logo}
+                alt="T2C Logo"
+                className="h-20 w-20 sm:h-16 sm:w-16 object-contain mt-2"
+              />
             </div>
           </Link>
 
@@ -400,11 +395,10 @@ const Navbar: React.FC = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-orange-600 bg-orange-50'
-                      : 'text-gray-600 hover:text-orange-600 hover:bg-gray-50'
-                  }`}
+                  className={`block px-4 py-3 rounded-lg font-medium transition-colors duration-200 ${isActive(item.href)
+                    ? 'text-orange-600 bg-orange-50'
+                    : 'text-gray-600 hover:text-orange-600 hover:bg-gray-50'
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -558,29 +552,7 @@ const Navbar: React.FC = () => {
                   Register as Customer
                 </motion.button>
 
-                {/* Divider */}
-                <div className="relative my-6">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-gray-300"></div>
-                  </div>
-                  <div className="relative flex justify-center text-sm">
-                    <span className="px-2 bg-white text-gray-500">or</span>
-                  </div>
-                </div>
 
-                {/* Admin Login */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setShowLoginModal(false);
-                    navigate("/admin/login");
-                  }}
-                  className="w-full border-2 border-gray-300 text-gray-700 py-4 rounded-xl font-medium hover:bg-gray-50 hover:border-gray-400 transition-all duration-200"
-                >
-                  Admin Login
-                </motion.button>
               </div>
             </motion.div>
           </motion.div>
