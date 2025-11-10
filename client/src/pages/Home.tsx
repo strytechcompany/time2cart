@@ -300,33 +300,23 @@ const Home: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`text-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                    index === 0
-                      ? 'bg-orange-500 text-white border-orange-500'
-                      : 'bg-white border-gray-200 hover:border-orange-300'
-                  }`}
+                  className={`flex flex-col justify-center items-center text-center p-6 rounded-xl border-2 cursor-pointer transition-all duration-300 hover:shadow-lg ${index === 0
+                    ? 'bg-orange-500 text-white border-orange-500'
+                    : 'bg-white border-gray-200 hover:border-orange-300'
+                    }`}
                   onClick={() => {
                     if (category === 'Candles') {
                       navigate('/candles-subcategories');
-                    }
-                    else if(category === 'Religious Products') {
+                    } else if (category === 'Religious Products') {
                       navigate('/Religious-Products');
-                    }
-                    else if(category === 'Kids Stationery') {
+                    } else if (category === 'Kids Stationery') {
                       navigate('/kids');
-                    }
-                    else {
+                    } else {
                       navigate('/gifts');
                     }
                   }}
                 >
-                  <div className="w-12 h-12 mx-auto mb-2 rounded-lg overflow-hidden">
-                    <img
-                      src={sample_categories[index % sample_categories.length].categoryImage}
-                      alt={category}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <div className="w-10 h-10 mb-2 rounded-lg overflow-hidden"></div>
                   <h3 className="font-semibold mb-1">{category}</h3>
                   <p className={`text-sm ${index === 0 ? 'text-orange-100' : 'text-gray-500'}`}>
                     {count} Products
