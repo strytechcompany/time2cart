@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const { state } = useCart();
   const { state: wishlistState } = useWishlist();
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logout, adminLogout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const searchRef = useRef<HTMLDivElement>(null);
@@ -89,7 +89,8 @@ const Navbar: React.FC = () => {
 
   const handleLogout = async () => {
     try {
-      await logout();
+      if(currentUser.role === 'admin') await adminLogout();
+      else await logout();
       toast.success('Logged out successfully');
       navigate('/');
     } catch (error) {
