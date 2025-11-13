@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
                   <PhoneIcon className="w-6 h-6 text-orange-500 mr-4" />
                   <div>
                     <p className="font-semibold text-gray-900">Phone</p>
-                    <p className="text-gray-600">+91 8015324928</p>
+                    <p className="text-gray-600">+91 80153 24928</p>
                   </div>
                 </div>
 
