@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
                   </svg>
                   <div>
                     <p className="font-semibold text-gray-900">WhatsApp</p>
-                    <p className="text-gray-600">+91 8015324928</p>
+                    <p className="text-gray-600">+91 80153 24928</p>
                   </div>
                 </div>
 
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
                   <EnvelopeIcon className="w-6 h-6 text-blue-500 mr-4" />
                   <div>
                     <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600">info@mirajcandles.com</p>
+                    <p className="text-gray-600">admin@time2cart.com</p>
                   </div>
                 </div>
 
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-6">Follow Us</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://instagram.com/mirajcandles"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-pink-500 text-white p-3 rounded-lg hover:bg-pink-600 transition-colors duration-200"
@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://facebook.com/mirajcandles"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
@@ -184,7 +184,7 @@ const Contact: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/8015324928"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition-colors duration-200"
@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
                 </a>
 
                 <a
-                  href="https://youtube.com/mirajcandles"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 transition-colors duration-200"
