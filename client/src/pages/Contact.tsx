@@ -270,7 +270,7 @@ const Contact: React.FC = () => {
                 <input
                   type="tel"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 80153 24928"
                   value={form.phone}
                   onChange={e => setForm({ ...form, phone: e.target.value })}
                 />
