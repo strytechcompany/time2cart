@@ -517,7 +517,7 @@ const Navbar: React.FC = () => {
               </button>
 
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-1">Welcome to Miraj</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-1">Welcome to Time2Cart</h2>
                 <p className="text-gray-600 text-sm sm:text-base">
                   Choose how you'd like to continue
                 </p>
