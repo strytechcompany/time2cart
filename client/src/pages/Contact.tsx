@@ -184,7 +184,7 @@ const Contact: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://wa.me/8015324928"
+                  href="https://wa.me/918015324928?text=Hi%20Time2cart!%20I%E2%80%99d%20like%20to%20place%20a%20bulk%20order%20of%20candles%20for%20gifting.%20Could%20you%20please%20share%20your%20catalog%20and%20bulk%20pricing%3F"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition-colors duration-200"
