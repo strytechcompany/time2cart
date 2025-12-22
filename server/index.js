@@ -1454,17 +1454,17 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
-// connectToDatabase().then(() => { console.log("MongoDB has connected successfully"); }).catch(err => { console.log("Error: ", err); });
+connectToDatabase().then(() => { console.log("MongoDB has connected successfully"); }).catch(err => { console.log("Error: ", err); });
 
-connectToDatabase().then(
-  () => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  },
-  (err) => {
-    console.error("Error connecting to MongoDB:", err);
-  }
-)
+// connectToDatabase().then(
+//   () => {
+//     app.listen(PORT, () => {
+//       console.log(`Server is running on port ${PORT}`);
+//     });
+//   },
+//   (err) => {
+//     console.error("Error connecting to MongoDB:", err);
+//   }
+// )
 
 export default app;

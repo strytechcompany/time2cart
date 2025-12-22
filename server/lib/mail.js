@@ -185,6 +185,14 @@ export const sendEmail = async ({email, emailType, userId, orderId, orderTotal, 
 				.replace('{customerMessage}', message)
 			};
 		}
+
+    else if(emailType === 'SEND TRACKING MAIL') {
+      // const user = await User.findById(userId);
+      // mailOptions = {
+      //   from: process.env.GMAIL_USERNAME,
+      //   to: user.email,
+
+    }
         const mailResponse = await transporter.sendMail(mailOptions);
         return mailResponse;
     }

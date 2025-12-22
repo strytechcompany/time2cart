@@ -58,7 +58,7 @@ const AdminOrders: React.FC = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `${import.meta.env.VITE_API_URL}/orders/${orderId}/delivery`,
+        `${import.meta.env.VITE_API_URL}/admin/verify-payment/${orderId}`,
         { trackingLink: link, deliveryPhone: phone },
         { withCredentials: true }
       );
