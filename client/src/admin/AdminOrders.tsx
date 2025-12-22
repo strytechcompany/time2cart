@@ -33,7 +33,9 @@ const AdminOrders: React.FC = () => {
     setLoading(true);
     try {
       const res = await axios.get(`${import.meta.env.VITE_API_URL}/admin/orders`, { withCredentials: true });
-      setOrders(res.data);
+      const sortedOrders = res.data.sort((a: any, b: any) => new Date(b.createdAt) - new Date(a.createdAt));
+      setOrders(sortedOrders);
+      // setOrders(res.data)
       toast.success('Orders loaded successfully');
     } catch (error: any) {
       toast.error(error.response?.data?.message || 'Failed to load orders');
