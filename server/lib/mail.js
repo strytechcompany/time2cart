@@ -44,7 +44,7 @@ export const sendEmail = async ({email, emailType, userId, orderId, orderTotal, 
 			mailOptions = {
 				from: process.env.GMAIL_USERNAME,
 				to: email,
-				subject: 'Your Order Has Been Received - Miraj Candles',
+				subject: 'Your Order Has Been Received - Time2Cart',
 				html: ORDER_RECEIVED_EMAIL_TEMPLATE.replace("{customerName}", user.name).replace("{orderId}", `ORD-${orderId.toString().slice(-6).toUpperCase()}`).replace("{orderTotal}", orderTotal)
 			}
         }
@@ -106,7 +106,7 @@ export const sendEmail = async ({email, emailType, userId, orderId, orderTotal, 
 			mailOptions = {
 				from: process.env.GMAIL_USERNAME,
 				to: email,
-				subject: 'Your Password Has Been Changed - Miraj Candles',
+				subject: 'Your Password Has Been Changed - Time2Cart',
 				html: PASSWORD_CHANGED_EMAIL_TEMPLATE.replace("{userName}", user.name)
 			}
 		}
@@ -135,7 +135,7 @@ export const sendEmail = async ({email, emailType, userId, orderId, orderTotal, 
           	mailOptions = {
             	from: process.env.GMAIL_USERNAME,
             	to: email,
-            	subject: 'New Order Received - Miraj Candles',
+            	subject: 'New Order Received - Time2Cart',
             	html: NEW_ORDER_NOTIFICATION_EMAIL_TEMPLATE
 				.replace('{orderId}', `ORD-${orderId.toString().slice(-6).toUpperCase()}`)
 				.replace('{customerName}', user.name)
@@ -152,7 +152,7 @@ export const sendEmail = async ({email, emailType, userId, orderId, orderTotal, 
           	mailOptions = {
 				from: process.env.GMAIL_USERNAME,
 				to: email,
-				subject: 'Your Query Has Been Received - Miraj Candles',
+				subject: 'Your Query Has Been Received - Time2Cart',
 				html: CUSTOMER_QUERY_RECEIVED_EMAIL_TEMPLATE
 				.replace('{customerName}', user.name)
 				.replace('{customerMessage}', message)
@@ -176,7 +176,7 @@ export const sendEmail = async ({email, emailType, userId, orderId, orderTotal, 
 			mailOptions = {
 				from: process.env.GMAIL_USERNAME,
 				to: email,
-				subject: '📩 New Customer Query Received - Miraj Candles',
+				subject: '📩 New Customer Query Received - Time2Cart',
 				html: ADMIN_QUERY_NOTIFICATION_EMAIL_TEMPLATE
 				.replace('{customerName}', user.name)
 				.replace('{customerEmail}', user.email)
@@ -222,7 +222,7 @@ const VERIFICATION_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verify Your Email - Miraj Candles</title>
+  <title>Verify Your Email - Time2Cart</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fff7f3; color: #333;">
   <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
@@ -233,7 +233,7 @@ const VERIFICATION_EMAIL_TEMPLATE = `
           <!-- Header -->
           <tr>
             <td align="center" style="background: linear-gradient(135deg, #ff7b00, #ff4500); padding: 30px;">
-              <img src="https://mirajcandles.com/logo.png" alt="Miraj Candles" width="80" style="display: block; margin-bottom: 10px;" />
+              <img src="https://mirajcandles.com/logo.png" alt="Time2Cart" width="80" style="display: block; margin-bottom: 10px;" />
               <h1 style="color: #ffffff; font-size: 24px; margin: 0;">Verify Your Email</h1>
             </td>
           </tr>
@@ -243,7 +243,7 @@ const VERIFICATION_EMAIL_TEMPLATE = `
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; margin-bottom: 15px;">Hi there,</p>
               <p style="font-size: 16px; margin-bottom: 20px;">
-                Welcome to <strong>Miraj Candles</strong> — where light meets luxury.
+                Welcome to <strong>Time2Cart</strong> — where light meets luxury.
                 To complete your registration and start exploring our handcrafted candle collection, please verify your email address.
               </p>
 
@@ -261,12 +261,12 @@ const VERIFICATION_EMAIL_TEMPLATE = `
               </p>
 
               <p style="font-size: 14px; margin-top: 30px; color: #555;">
-                If you didn't create an account with Miraj Candles, you can safely ignore this message.
+                If you didn't create an account with Time2Cart, you can safely ignore this message.
               </p>
 
               <p style="font-size: 14px; margin-top: 40px; color: #444;">
                 Warm regards,<br/>
-                <strong>The Miraj Candles Team 🕯️</strong>
+                <strong>The Time2Cart Team 🕯️</strong>
               </p>
             </td>
           </tr>
@@ -274,7 +274,7 @@ const VERIFICATION_EMAIL_TEMPLATE = `
           <!-- Footer -->
           <tr>
             <td align="center" style="background-color: #fff4e6; padding: 20px; font-size: 12px; color: #888;">
-              <p style="margin: 0;">© 2025 Miraj Candles. All rights reserved.</p>
+              <p style="margin: 0;">© 2025 Time2Cart. All rights reserved.</p>
               <p style="margin: 5px 0 0;">This is an automated email, please do not reply.</p>
             </td>
           </tr>
@@ -293,7 +293,7 @@ const RESET_PASSWORD_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reset Your Password - Miraj Candles</title>
+  <title>Reset Your Password - Time2Cart</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fff7f3; color: #333;">
   <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
@@ -304,7 +304,7 @@ const RESET_PASSWORD_EMAIL_TEMPLATE = `
           <!-- Header -->
           <tr>
             <td align="center" style="background: linear-gradient(135deg, #ff7b00, #ff4500); padding: 30px;">
-              <img src="https://mirajcandles.com/logo.png" alt="Miraj Candles" width="80" style="display: block; margin-bottom: 10px;" />
+              <img src="https://mirajcandles.com/logo.png" alt="Time2Cart" width="80" style="display: block; margin-bottom: 10px;" />
               <h1 style="color: #ffffff; font-size: 24px; margin: 0;">Reset Your Password</h1>
             </td>
           </tr>
@@ -314,7 +314,7 @@ const RESET_PASSWORD_EMAIL_TEMPLATE = `
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; margin-bottom: 15px;">Hi there,</p>
               <p style="font-size: 16px; margin-bottom: 20px;">
-                We received a request to reset your password for your <strong>Miraj Candles</strong> account.
+                We received a request to reset your password for your <strong>Time2Cart</strong> account.
                 To proceed, please use the verification code below:
               </p>
 
@@ -337,7 +337,7 @@ const RESET_PASSWORD_EMAIL_TEMPLATE = `
 
               <p style="font-size: 14px; margin-top: 40px; color: #444;">
                 Warm regards,<br/>
-                <strong>The Miraj Candles Team 🕯️</strong>
+                <strong>The Time2Cart Team 🕯️</strong>
               </p>
             </td>
           </tr>
@@ -345,7 +345,7 @@ const RESET_PASSWORD_EMAIL_TEMPLATE = `
           <!-- Footer -->
           <tr>
             <td align="center" style="background-color: #fff4e6; padding: 20px; font-size: 12px; color: #888;">
-              <p style="margin: 0;">© 2025 Miraj Candles. All rights reserved.</p>
+              <p style="margin: 0;">© 2025 Time2Cart. All rights reserved.</p>
               <p style="margin: 5px 0 0;">This is an automated email, please do not reply.</p>
             </td>
           </tr>
@@ -364,7 +364,7 @@ const ORDER_RECEIVED_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Order Has Been Received - Miraj Candles</title>
+  <title>Your Order Has Been Received - Time2Cart</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fff7f3; color: #333;">
   <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
@@ -375,7 +375,7 @@ const ORDER_RECEIVED_EMAIL_TEMPLATE = `
           <!-- Header -->
           <tr>
             <td align="center" style="background: linear-gradient(135deg, #ff7b00, #ff4500); padding: 30px;">
-              <img src="https://mirajcandles.com/logo.png" alt="Miraj Candles" width="80" style="display: block; margin-bottom: 10px;" />
+              <img src="https://mirajcandles.com/logo.png" alt="Time2Cart" width="80" style="display: block; margin-bottom: 10px;" />
               <h1 style="color: #ffffff; font-size: 24px; margin: 0;">Order Received Successfully</h1>
             </td>
           </tr>
@@ -386,7 +386,7 @@ const ORDER_RECEIVED_EMAIL_TEMPLATE = `
               <p style="font-size: 16px; margin-bottom: 15px;">Hi {customerName},</p>
 
               <p style="font-size: 16px; margin-bottom: 20px;">
-                Thank you for shopping with <strong>Miraj Candles</strong> 🕯️
+                Thank you for shopping with <strong>Time2Cart</strong> 🕯️
                 We're excited to let you know that we've successfully received your order <strong>{orderId}</strong>.
               </p>
 
@@ -411,7 +411,7 @@ const ORDER_RECEIVED_EMAIL_TEMPLATE = `
 
               <p style="font-size: 14px; margin-top: 40px; color: #444;">
                 Warm regards,<br/>
-                <strong>The Miraj Candles Team</strong>
+                <strong>The Time2Cart Team</strong>
               </p>
             </td>
           </tr>
@@ -419,7 +419,7 @@ const ORDER_RECEIVED_EMAIL_TEMPLATE = `
           <!-- Footer -->
           <tr>
             <td align="center" style="background-color: #fff4e6; padding: 20px; font-size: 12px; color: #888;">
-              <p style="margin: 0;">© 2025 Miraj Candles. All rights reserved.</p>
+              <p style="margin: 0;">© 2025 Time2Cart. All rights reserved.</p>
               <p style="margin: 5px 0 0;">This is an automated message, please do not reply.</p>
             </td>
           </tr>
@@ -607,7 +607,7 @@ const PASSWORD_CHANGED_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Password Changed Successfully - Miraj Candles</title>
+  <title>Password Changed Successfully - Time2Cart</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fff7f3; color: #333;">
   <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
@@ -618,7 +618,7 @@ const PASSWORD_CHANGED_EMAIL_TEMPLATE = `
           <!-- Header -->
           <tr>
             <td align="center" style="background: linear-gradient(135deg, #ff7b00, #ff4500); padding: 30px;">
-              <img src="https://mirajcandles.com/logo.png" alt="Miraj Candles" width="80" style="display: block; margin-bottom: 10px;" />
+              <img src="https://mirajcandles.com/logo.png" alt="Time2Cart" width="80" style="display: block; margin-bottom: 10px;" />
               <h1 style="color: #ffffff; font-size: 24px; margin: 0;">Password Changed Successfully</h1>
             </td>
           </tr>
@@ -628,7 +628,7 @@ const PASSWORD_CHANGED_EMAIL_TEMPLATE = `
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; margin-bottom: 15px;">Hi {userName},</p>
               <p style="font-size: 16px; margin-bottom: 20px;">
-                This is to confirm that your <strong>Miraj Candles</strong> account password has been changed successfully.
+                This is to confirm that your <strong>Time2Cart</strong> account password has been changed successfully.
               </p>
 
               <div style="background-color: #fff4e6; padding: 20px 30px; border-left: 4px solid #ff7b00; border-radius: 6px; margin: 30px 0;">
@@ -646,7 +646,7 @@ const PASSWORD_CHANGED_EMAIL_TEMPLATE = `
 
               <p style="font-size: 14px; margin-top: 40px; color: #444;">
                 Stay secure,<br/>
-                <strong>The Miraj Candles Team 🕯️</strong>
+                <strong>The Time2Cart Team 🕯️</strong>
               </p>
             </td>
           </tr>
@@ -654,7 +654,7 @@ const PASSWORD_CHANGED_EMAIL_TEMPLATE = `
           <!-- Footer -->
           <tr>
             <td align="center" style="background-color: #fff4e6; padding: 20px; font-size: 12px; color: #888;">
-              <p style="margin: 0;">© 2025 Miraj Candles. All rights reserved.</p>
+              <p style="margin: 0;">© 2025 Time2Cart. All rights reserved.</p>
               <p style="margin: 5px 0 0;">This is an automated email, please do not reply.</p>
             </td>
           </tr>
@@ -673,7 +673,7 @@ const NEW_ORDER_NOTIFICATION_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Order Received - Miraj Candles</title>
+  <title>New Order Received - Time2Cart</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fff7f3; color: #333;">
   <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
@@ -684,7 +684,7 @@ const NEW_ORDER_NOTIFICATION_EMAIL_TEMPLATE = `
           <!-- Header -->
           <tr>
             <td align="center" style="background: linear-gradient(135deg, #ff7b00, #ff4500); padding: 30px;">
-              <img src="https://mirajcandles.com/logo.png" alt="Miraj Candles" width="80" style="display: block; margin-bottom: 10px;" />
+              <img src="https://mirajcandles.com/logo.png" alt="Time2Cart" width="80" style="display: block; margin-bottom: 10px;" />
               <h1 style="color: #ffffff; font-size: 24px; margin: 0;">New Order Placed</h1>
             </td>
           </tr>
@@ -694,7 +694,7 @@ const NEW_ORDER_NOTIFICATION_EMAIL_TEMPLATE = `
             <td style="padding: 30px 40px;">
               <p style="font-size: 16px; margin-bottom: 15px;">Hello Admin,</p>
               <p style="font-size: 16px; margin-bottom: 20px;">
-                A new order has just been placed on <strong>Miraj Candles</strong>. Please review the details below.
+                A new order has just been placed on <strong>Time2Cart</strong>. Please review the details below.
               </p>
 
               <!-- Order Summary Box -->
@@ -734,7 +734,7 @@ const NEW_ORDER_NOTIFICATION_EMAIL_TEMPLATE = `
 
               <p style="font-size: 14px; margin-top: 40px; color: #444;">
                 Best regards,<br/>
-                <strong>Miraj Candles System 🕯️</strong>
+                <strong>Time2Cart System 🕯️</strong>
               </p>
             </td>
           </tr>
@@ -742,7 +742,7 @@ const NEW_ORDER_NOTIFICATION_EMAIL_TEMPLATE = `
           <!-- Footer -->
           <tr>
             <td align="center" style="background-color: #fff4e6; padding: 20px; font-size: 12px; color: #888;">
-              <p style="margin: 0;">© 2025 Miraj Candles. All rights reserved.</p>
+              <p style="margin: 0;">© 2025 Time2Cart. All rights reserved.</p>
               <p style="margin: 5px 0 0;">This is an automated email for administrative purposes.</p>
             </td>
           </tr>
@@ -761,7 +761,7 @@ const CUSTOMER_QUERY_RECEIVED_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Query Has Been Received - Miraj Candles</title>
+  <title>Your Query Has Been Received - Time2Cart</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fff7f3; color: #333;">
   <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
@@ -772,7 +772,7 @@ const CUSTOMER_QUERY_RECEIVED_EMAIL_TEMPLATE = `
           <!-- Header -->
           <tr>
             <td align="center" style="background: linear-gradient(135deg, #ff7b00, #ff4500); padding: 30px;">
-              <img src="https://mirajcandles.com/logo.png" alt="Miraj Candles" width="80" style="display: block; margin-bottom: 10px;" />
+              <img src="https://mirajcandles.com/logo.png" alt="Time2Cart" width="80" style="display: block; margin-bottom: 10px;" />
               <h1 style="color: #ffffff; font-size: 24px; margin: 0;">We've Received Your Query</h1>
             </td>
           </tr>
@@ -783,7 +783,7 @@ const CUSTOMER_QUERY_RECEIVED_EMAIL_TEMPLATE = `
               <p style="font-size: 16px; margin-bottom: 15px;">Hi {customerName},</p>
 
               <p style="font-size: 16px; margin-bottom: 20px;">
-                Thank you for reaching out to <strong>Miraj Candles</strong> 🕯️.
+                Thank you for reaching out to <strong>Time2Cart</strong> 🕯️.
                 We’ve successfully received your message and our support team is reviewing it.
               </p>
 
@@ -804,7 +804,7 @@ const CUSTOMER_QUERY_RECEIVED_EMAIL_TEMPLATE = `
 
               <p style="font-size: 14px; margin-top: 40px; color: #444;">
                 Warm regards,<br/>
-                <strong>The Miraj Candles Support Team 🕯️</strong>
+                <strong>The Time2Cart Support Team 🕯️</strong>
               </p>
             </td>
           </tr>
@@ -812,7 +812,7 @@ const CUSTOMER_QUERY_RECEIVED_EMAIL_TEMPLATE = `
           <!-- Footer -->
           <tr>
             <td align="center" style="background-color: #fff4e6; padding: 20px; font-size: 12px; color: #888;">
-              <p style="margin: 0;">© 2025 Miraj Candles. All rights reserved.</p>
+              <p style="margin: 0;">© 2025 Time2Cart. All rights reserved.</p>
               <p style="margin: 5px 0 0;">This is an automated email — please do not reply directly.</p>
             </td>
           </tr>
@@ -831,7 +831,7 @@ const ADMIN_QUERY_NOTIFICATION_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Customer Query - Miraj Candles</title>
+  <title>New Customer Query - Time2Cart</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fff7f3; color: #333;">
   <table role="presentation" cellspacing="0" cellpadding="0" width="100%">
@@ -842,7 +842,7 @@ const ADMIN_QUERY_NOTIFICATION_EMAIL_TEMPLATE = `
           <!-- Header -->
           <tr>
             <td align="center" style="background: linear-gradient(135deg, #ff7b00, #ff4500); padding: 30px;">
-              <img src="https://mirajcandles.com/logo.png" alt="Miraj Candles" width="80" style="display: block; margin-bottom: 10px;" />
+              <img src="https://mirajcandles.com/logo.png" alt="Time2Cart" width="80" style="display: block; margin-bottom: 10px;" />
               <h1 style="color: #ffffff; font-size: 24px; margin: 0;">New Customer Query Received</h1>
             </td>
           </tr>
@@ -853,7 +853,7 @@ const ADMIN_QUERY_NOTIFICATION_EMAIL_TEMPLATE = `
               <p style="font-size: 16px; margin-bottom: 15px;">Hello Admin,</p>
 
               <p style="font-size: 16px; margin-bottom: 20px;">
-                A new customer has just reached out via the <strong>Contact Us</strong> form on the Miraj Candles website. Below are the details:
+                A new customer has just reached out via the <strong>Contact Us</strong> form on the Time2Cart website. Below are the details:
               </p>
 
               <!-- Query Details Box -->
@@ -883,7 +883,7 @@ const ADMIN_QUERY_NOTIFICATION_EMAIL_TEMPLATE = `
 
               <p style="font-size: 14px; margin-top: 40px; color: #444;">
                 Regards,<br/>
-                <strong>Miraj Candles System 🕯️</strong>
+                <strong>Time2Cart System 🕯️</strong>
               </p>
             </td>
           </tr>
@@ -891,7 +891,7 @@ const ADMIN_QUERY_NOTIFICATION_EMAIL_TEMPLATE = `
           <!-- Footer -->
           <tr>
             <td align="center" style="background-color: #fff4e6; padding: 20px; font-size: 12px; color: #888;">
-              <p style="margin: 0;">© 2025 Miraj Candles. All rights reserved.</p>
+              <p style="margin: 0;">© 2025 Time2Cart. All rights reserved.</p>
               <p style="margin: 5px 0 0;">This is an automated email for administrative purposes.</p>
             </td>
           </tr>
