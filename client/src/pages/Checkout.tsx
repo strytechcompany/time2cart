@@ -93,8 +93,7 @@ const Checkout: React.FC = () => {
         toast.error('Failed to verify payment.');
       }
     } catch (error) {
-      console.error('Error verifying payment:', error);
-      toast.error('Verification failed. Please try again.');
+      toast.error('Verification failed. Please try again.', error);
     } finally {
       setLoading(false);
     }

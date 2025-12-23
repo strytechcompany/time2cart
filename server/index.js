@@ -1357,7 +1357,28 @@ app.post('/api/payment', verifyToken, async (req, res) => {
 
 app.post("/api/verify-upi-payment", verifyToken, async (req, res) => {
   try {
-    const { amount, txnId, items, street, city, state, zipCode } = req.body;
+    const { amount, txnId, items, formData } = req.body;
+
+    function isAddressEmpty(obj) {
+      if (!obj || typeof obj !== 'object') return true;
+
+      const address = typeof obj.toObject === 'function'
+        ? obj.toObject()
+        : obj;
+
+      const fields = ['street', 'city', 'state', 'zipCode'];
+
+      return fields.every(
+        key => !address[key] || address[key].trim() === ''
+      );
+    }
+
+    if (isAddressEmpty(formData) && isAddressEmpty(req.user.address)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Address is required'
+      });
+    }
 
     if (!txnId) {
       return res.status(400).json({ success: false, message: "Transaction ID is required" });
@@ -1378,10 +1399,10 @@ app.post("/api/verify-upi-payment", verifyToken, async (req, res) => {
         name: req.user.name,
         email: req.user.email,
         phone: req.user.phone,
-        street: street || req.user.address.street,
-        city: city || req.user.address.city,
-        state: state || req.user.address.state,
-        zipCode: zipCode || req.user.address.zipCode,
+        street: formData.street || req.user.address.street,
+        city: formData.city || req.user.address.city,
+        state: formData.state || req.user.address.state,
+        zipCode: formData.zipCode || req.user.address.zipCode,
       },
     });
 
